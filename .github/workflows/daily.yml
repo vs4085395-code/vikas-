@@ -23,10 +23,11 @@ jobs:
 
       - name: Run Python project
         run: python main.py
-
-      - name: Upload Hindi Script
+      - name: Upload Script and Voice
         uses: actions/upload-artifact@v4
         with:
-          name: hindi-youtube-script
-          path: script.txt
+          name: hindi-youtube-video-files
+          path: |
+            script.txt
+            voice.mp3
           retention-days: 7
