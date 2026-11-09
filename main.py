@@ -1,6 +1,6 @@
 import random
 from script_generator import generate_script
-
+from voice_generator import generate_voice
 print("AI YouTube Automation Started!")
 
 with open("topics.txt", "r", encoding="utf-8") as file:
@@ -20,4 +20,3 @@ with open("script.txt", "w", encoding="utf-8") as file:
     file.write(script)
 
 print("Hindi script generated successfully!")
-from voice_generator import generate_voice
