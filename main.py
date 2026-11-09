@@ -1,20 +1,21 @@
 import random
+from script_generator import generate_script
 
 print("AI YouTube Automation Started!")
 
-# Read topics
 with open("topics.txt", "r", encoding="utf-8") as file:
-    topics = [
-        line.strip()
-        for line in file
-        if line.strip()
-    ]
+    topics = [line.strip() for line in file if line.strip()]
 
 if not topics:
     raise ValueError("No topics found!")
 
-# Select a random topic
 topic = random.choice(topics)
 
-print("Today's Topic:", topic)
-print("Topic selection successful!")
+print("Selected Topic:", topic)
+
+script = generate_script(topic)
+
+with open("script.txt", "w", encoding="utf-8") as file:
+    file.write(script)
+
+print("Hindi script generated successfully!")
