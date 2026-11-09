@@ -1,4 +1,4 @@
 google-genai
 pillow
 moviepy
-edge_tts
+edge-tts
