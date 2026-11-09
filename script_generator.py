@@ -1,44 +1,27 @@
-import os
-from google import genai
-
 def generate_script(topic):
 
-    api_key = os.environ.get("GEMINI_API_KEY")
+    script = f"""
+क्या आप जानते हैं?
 
-    if not api_key:
-        raise ValueError("Gemini API key not found!")
+आज हम बात करेंगे {topic} के बारे में।
 
-    client = genai.Client(api_key=api_key)
+यह technology हमारी दुनिया को
+तेजी से बदल रही है।
 
-    prompt = f"""
-    You are a professional Hindi YouTube Shorts script writer.
+इसका इस्तेमाल education,
+business और daily life में
+लगातार बढ़ रहा है।
 
-    Create a 30-60 second YouTube Shorts script.
+आने वाले समय में यह technology
+हमारे काम करने का तरीका बदल सकती है।
 
-    Topic: {topic}
+ऐसी ही interesting technology
+जानकारी के लिए follow करें!
+"""
 
-    Requirements:
-    - Language: Simple Hindi
-    - Start with a powerful hook.
-    - Explain the topic in an interesting way.
-    - Include useful facts.
-    - End with a call to action.
-    - No unnecessary introduction.
-
-    Return only the script.
-    """
-
-    response = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt
-    )
-
-    return response.text
+    return script
 
 
 if __name__ == "__main__":
     topic = "Artificial Intelligence"
-    script = generate_script(topic)
-
-    print("\nGENERATED SCRIPT:\n")
-    print(script)
+    print(generate_script(topic))
