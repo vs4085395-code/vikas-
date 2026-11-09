@@ -14,8 +14,9 @@ topic = random.choice(topics)
 print("Selected Topic:", topic)
 
 script = generate_script(topic)
-
+print("Voice generation completed!")
 with open("script.txt", "w", encoding="utf-8") as file:
     file.write(script)
 
 print("Hindi script generated successfully!")
+from voice_generator import generate_voice
