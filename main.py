@@ -14,6 +14,7 @@ topic = random.choice(topics)
 print("Selected Topic:", topic)
 
 script = generate_script(topic)
+generate_voice(script)
 print("Voice generation completed!")
 with open("script.txt", "w", encoding="utf-8") as file:
     file.write(script)
